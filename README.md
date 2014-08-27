@@ -1,39 +1,21 @@
-# DDFlare
-Command line Dynamic DNS client for CloudFlare
+# Net::DNS::CloudFlare::DDNS
 
-## Usage
-    ddflare [ options ] path_to_config
+Perl module providing an object orientated dynamic DNS interface to
+CloudFlare's DNS service
 
-## Options
-    --version                 Version Information
-    -?, --help                Usage info
-    -v, --verbose             Verbose output
-    -o file, --output=file    Append output to file
-    -e file, --error=file     Append error to file
+## Documentation
+
+Please see [MetaCPAN](https://metacpan.org/pod/Net::DNS::CloudFlare::DDNS)
 
 ## Installation
 
-Install from CPAN
+Install with cpanminus
 
-    cpan install App::DDFlare
+    cpanm Net::DNS::CloudFlare::DDNS
 
-Then set up to run as a service
+or cpan
 
-## Config
-The configuration file is YAML in the following structure
-    --- # Credentials
-    user: cloudflare-user
-    key: cloudflare-api-key
-    --- # Updates dom.com and sub1.dom1.com
-    zone: dom.com
-    domains:
-     -
-     - sub1
-    --- # Updates sub1.dom2.com and sub2.dom2.com
-    zone: dom2.com
-    domains:
-     - sub1
-     - sub2
+    cpan install Net::DNS::CloudFlare::DDNS
 
 ## License
 
