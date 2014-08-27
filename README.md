@@ -5,7 +5,9 @@ CloudFlare's DNS service
 
 ## Documentation
 
-Please see [MetaCPAN](https://metacpan.org/pod/Net::DNS::CloudFlare::DDNS)
+Please see [MetaCPAN][mpan]
+
+[mpan]: https://metacpan.org/pod/Net::DNS::CloudFlare::DDNS
 
 ## Installation
 
