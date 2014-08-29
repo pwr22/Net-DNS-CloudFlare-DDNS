@@ -4,8 +4,8 @@ package Net::DNS::CloudFlare::DDNS;
 use Modern::Perl '2012';
 use autodie      ':all';
 no  indirect     'fatal';
-
 use namespace::autoclean;
+
 use Moose; use MooseX::StrictConstructor;
 use Types::Standard                   qw( Bool Str);
 use Net::DNS::CloudFlare::DDNS::Types qw( CloudFlareClient LWPUserAgent);
@@ -244,5 +244,11 @@ Whether or not the object should be verbose
 
     # Print current verbosity
     say $ddns->verbose;
+
+=head1 BUGS
+
+Please report any bugs or feature requests to C<bug-net-dns-cloudflare-ddns
+at rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Net-DNS-CloudFlare-DDNS>
 
 =cut
