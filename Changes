@@ -1,6 +1,8 @@
 Revision history for Net-DNS-CloudFlare-DDNS
 
 {{$NEXT}}
+
+0.06_3    2014-10-02
  - Bits and bobs
  - Update repo info - git repo split
 
