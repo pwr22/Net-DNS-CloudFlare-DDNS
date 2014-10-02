@@ -70,7 +70,7 @@ sub _buildDomIds {
                  'CloudFlare API threw an error: ', $e->errorCode, ' ',
                  $e->message}
         catch (CloudFlare::Client::Exception::Connection $e) {
-            carp "Fetching zone IDs for $zone failed because the " ,
+            carp "Fetching zone IDs for $name failed because the " ,
                  'connection to the CloudFlare API failed: ', $e->status, ' ',
                  $e->message}
         # Install ids into map under
@@ -151,7 +151,7 @@ sub update {
             # Update IP
             say "Trying to update IP for $dom" if $self->verbose;
             try { $self->_api->recEdit($zone->{zone}, $REC_TYPE,
-                                       $self->_domIds->{\$dom}, $dom->{name},
+                                       $self->_domIds->{\$dom}, $dom,
                                        $ip, $TTL);
                   # Record the new IP - won't happen if we fail above
                   $self->_lastIps->{\$dom} = $ip}
