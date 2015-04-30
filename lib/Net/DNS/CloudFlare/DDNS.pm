@@ -14,7 +14,8 @@ use Carp;
 use Readonly;
 
 use List::Util 'shuffle';
-use CloudFlare::Client v0.55.0;
+# first dotted decimal version and args as hash interface
+use CloudFlare::Client 'v0.55.1';
 
 # VERSION
 
