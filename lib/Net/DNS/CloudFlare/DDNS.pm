@@ -39,7 +39,7 @@ sub _getDomainIds {
 
     # Query CloudFlare
     say "Trying domain IDs lookup for $zone" if $self->verbose;
-    Readonly my $info => $self->_api->recLoadAll($zone);
+    Readonly my $info => $self->_api->rec_load_all( z => $zone);
     # Filter to just A records and get a list of [domain => id]
     my @pairs = map { $_->{type} eq 'A' ? [ $_->{name} => $_->{rec_id} ]
                                         : () } @{ $info->{recs}{objs}};
@@ -150,9 +150,13 @@ sub update {
                 unless defined $self->_domIds->{\$dom};
             # Update IP
             say "Trying to update IP for $dom" if $self->verbose;
-            try { $self->_api->recEdit($zone->{zone}, $REC_TYPE,
-                                       $self->_domIds->{\$dom}, $dom,
-                                       $ip, $TTL);
+            try { $self->_api->rec_edit(
+                      z       => $zone->{zone},
+                      type    => $REC_TYPE,
+                      id      => $self->_domIds->{\$dom},
+                      name    => $dom,
+                      content => $ip,
+                      ttl     => $TTL,);
                   # Record the new IP - won't happen if we fail above
                   $self->_lastIps->{\$dom} = $ip}
             catch (CloudFlare::Client::Exception::Upstream $e) {
