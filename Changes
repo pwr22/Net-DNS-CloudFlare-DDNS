@@ -1,12 +1,12 @@
 Revision history for Net-DNS-CloudFlare-DDNS
 
 {{$NEXT}}
-- Test with TravisCI
-- use new interface of CloudFlare::Client
-- update dist.ini
-- Move to github
-- switch to V-string
-- Fix previous version changelog
+ - Test with TravisCI
+ - use new interface of CloudFlare::Client
+ - update dist.ini
+ - Move to github
+ - switch to V-string
+ - Fix previous version changelog
 
 0.06_3    2014-10-02
  - Fix more bugs
