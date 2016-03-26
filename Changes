@@ -7,6 +7,7 @@ Revision history for Net-DNS-CloudFlare-DDNS
  - Move to github
  - switch to V-string
  - Fix previous version changelog
+ - Changes to work with Pod::Weave / Test::Synopsis properly
 
 0.06_3    2014-10-02
  - Fix more bugs

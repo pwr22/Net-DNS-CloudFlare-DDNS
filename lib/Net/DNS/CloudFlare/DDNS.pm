@@ -176,8 +176,7 @@ sub update {
 
 __END__
 
-=for test_synopsis
-my ($CF_USER, $CF_KEY, $ZONE_CONF);
+=for test_synopsis my ($CF_USER, $CF_KEY, $ZONE_CONF);
 
 =head1 SYNOPSIS
 
@@ -190,7 +189,7 @@ Provides an object orientated dynamic DNS interface for CloudFlare
         apikey => $CF_KEY,
         zones  => $ZONE_CONF
     );
-    my $ddns->update();
+    $ddns->update();
     ...
 
 =method new
