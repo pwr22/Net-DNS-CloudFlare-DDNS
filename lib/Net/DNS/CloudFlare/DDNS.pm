@@ -17,7 +17,7 @@ use List::Util 'shuffle';
 # first dotted decimal version and args as hash interface
 use CloudFlare::Client 'v0.55.1';
 
-# VERSION
+our $VERSION = 'v0.63.1'; # VERSION
 
 has 'verbose' => ( is => 'rw', isa => Bool);
 # CF credentials
@@ -176,6 +176,18 @@ sub update {
 
 __END__
 
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Net::DNS::CloudFlare::DDNS - Object Orientated Dynamic DNS Interface to CloudFlare DNS
+
+=head1 VERSION
+
+version v0.63.1
+
 =for test_synopsis my ($CF_USER, $CF_KEY, $ZONE_CONF);
 
 =head1 SYNOPSIS
@@ -192,7 +204,24 @@ Provides an object orientated dynamic DNS interface for CloudFlare
     $ddns->update();
     ...
 
-=method new
+=head1 ATTRIBUTES
+
+=head2 verbose
+
+Whether or not the object should be verbose
+
+    # Verbosity on
+    $ddns->verbose(1);
+
+    # Verbosity off
+    $ddns->verbose(0);
+
+    # Print current verbosity
+    say $ddns->verbose;
+
+=head1 METHODS
+
+=head2 new
 
 Create a new Dynamic DNS object
 
@@ -230,29 +259,84 @@ is as follows
 
 Each domain is an A record within a zone or undef for the zone itself
 
-=method update
+=head2 update
 
 Updates CloudFlare DNS with the current IP address if necessary
 
     $ddns->update
-
-=attr verbose
-
-Whether or not the object should be verbose
-
-    # Verbosity on
-    $ddns->verbose(1);
-
-    # Verbosity off
-    $ddns->verbose(0);
-
-    # Print current verbosity
-    say $ddns->verbose;
 
 =head1 BUGS
 
 Please report any bugs or feature requests to C<bug-net-dns-cloudflare-ddns
 at rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Net-DNS-CloudFlare-DDNS>
+
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
+
+=head1 SUPPORT
+
+=head2 Perldoc
+
+You can find documentation for this module with the perldoc command.
+
+  perldoc Net::DNS::CloudFlare::DDNS
+
+=head2 Websites
+
+The following websites have more information about this module, and may be of help to you. As always,
+in addition to those websites please use your favorite search engine to discover more resources.
+
+=over 4
+
+=item *
+
+MetaCPAN
+
+A modern, open-source CPAN search engine, useful to view POD in HTML format.
+
+L<http://metacpan.org/release/Net-DNS-CloudFlare-DDNS>
+
+=back
+
+=head2 Email
+
+You can email the author of this module at C<me+dev@peter-r.co.uk> asking for help with any problems you have.
+
+=head2 Source Code
+
+The code is open to the world, and available for you to hack on. Please feel free to browse it and play
+with it, or whatever. If you want to contribute patches, please send me a diff or prod me to pull
+from your repository :)
+
+L<https://github.com/pwr22/Net-DNS-CloudFlare-DDNS>
+
+  git clone git://github.com/pwr22/Net-DNS-CloudFlare-DDNS.git
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/pwr22/Net-DNS-CloudFlare-DDNS/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 CONTRIBUTOR
+
+=for stopwords Peter Roberts
+
+Peter Roberts <me@peter-r.co.uk>
+
+=head1 AUTHOR
+
+Peter Roberts <me+dev@peter-r.co.uk>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2016 by Peter Roberts.
+
+This is free software, licensed under:
+
+  The MIT (X11) License
 
 =cut

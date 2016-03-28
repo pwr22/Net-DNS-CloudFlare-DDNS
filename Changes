@@ -1,7 +1,5 @@
 Revision history for Net-DNS-CloudFlare-DDNS
 
-{{$NEXT}}
-
 v0.63.1   2016-03-28
  - Test with TravisCI
  - use new interface of CloudFlare::Client
