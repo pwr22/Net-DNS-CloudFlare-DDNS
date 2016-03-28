@@ -1,7 +1,7 @@
 Revision history for Net-DNS-CloudFlare-DDNS
 
 {{$NEXT}}
- - Test with TravisCI with all the Perls
+ - Test with TravisCI
  - use new interface of CloudFlare::Client
  - update dist.ini
  - Move to github
