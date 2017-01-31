@@ -1,0 +1,6 @@
+-pbp # start with perl best practices settings as a base
+-ple # preserve line endings
+-nolq # don't outdent long quotes
+-nolc # don't outdent long comments
+-nola # don't outdent labels
+-vt=0 # minimum vertical tightness

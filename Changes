@@ -1,6 +1,7 @@
 Revision history for Net-DNS-CloudFlare-DDNS
 
 {{$NEXT}}
+ - refactor code style
 
 v0.63.1   2016-03-28
  - Test with TravisCI
